@@ -14,16 +14,23 @@ public void setup()
     }
   }
 }
-public boolean palindrome(String word)
-{
-  //your code here
-  return false;
+public boolean palindrome(String sWord){
+    
+    String word1 = noCapitals(sWord);
+    if(word1.equals(reverse(word1)))
+        return true;
+    return false;
 }
-public String reverse(String str)
-{
-    String sNew = new String();
-    //your code here
-    return sNew;
+public String reverse(String sWord){
+  String backwards = "";
+  int last = sWord.length()-1;
+  for(int i = last; i >= 0; i--)
+  {
+    backwards = backwards + sWord.substring(i, i+1);
+  }
+  return backwards;
 }
 
-
+public String noCapitals(String sWord){
+  return(sWord.toLowerCase());
+}
